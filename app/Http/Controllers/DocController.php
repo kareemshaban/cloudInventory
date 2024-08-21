@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Doc;
+use Carbon\Carbon;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class DocController extends Controller
@@ -61,5 +63,70 @@ class DocController extends Controller
     public function destroy(Doc $doc)
     {
         //
+    }
+
+
+    public function upload(Request $request)
+    {
+
+        try {
+            $doc = Doc::find($request->DocID);
+            if ($doc) {
+                $doc->update([
+                    'DocTypeBasicId' => $request->DocTypeBasicId,
+                    'FixedPart' => $request->FixedPart,
+                    'DBCode' => $request->DBCode,
+                    'DocNameEN' => $request->DocNameEN,
+                    'DocNameAR' => $request->DocNameAR,
+                    'UserGroup' => $request->UserGroup,
+                    'User' => $request->User,
+                    'Stock' => $request->Stock,
+                    'onlySystemDoc' => $request->onlySystemDoc,
+                    'IsAutomaticSerial' => $request->IsAutomaticSerial,
+                    'NnoOfDigits' => $request->NnoOfDigits,
+                    'FirstNo' => $request->FirstNo,
+                    'LastNo' => $request->LastNo,
+                    'migrateMethod' => $request->migrateMethod,
+                    'printForm' => $request->printForm,
+                    'printWithSave' => $request->printWithSave,
+                    'SeveralPaymentWaysID' => $request->SeveralPaymentWaysID,
+                    'UsrUpd' => $request->UsrUpd,
+                    'TimUpd' => Carbon::now(),
+                ]);
+
+                return response()->json(['state' => 'success', 'message' => 'Data Inserted Successfully']);
+            } else {
+                Doc::create([
+                    'DocID' => $request->DocID,
+                    'DocTypeBasicId' => $request->DocTypeBasicId,
+                    'FixedPart' => $request->FixedPart,
+                    'DBCode' => $request->DBCode,
+                    'DocNameEN' => $request->DocNameEN,
+                    'DocNameAR' => $request->DocNameAR,
+                    'UserGroup' => $request->UserGroup,
+                    'User' => $request->User,
+                    'Stock' => $request->Stock,
+                    'onlySystemDoc' => $request->onlySystemDoc,
+                    'IsAutomaticSerial' => $request->IsAutomaticSerial,
+                    'NnoOfDigits' => $request->NnoOfDigits,
+                    'FirstNo' => $request->FirstNo,
+                    'LastNo' => $request->LastNo,
+                    'migrateMethod' => $request->migrateMethod,
+                    'printForm' => $request->printForm,
+                    'printWithSave' => $request->printWithSave,
+                    'SeveralPaymentWaysID' => $request->SeveralPaymentWaysID,
+                    'UsrIns' => $request->UsrIns,
+                    'TimIns' => Carbon::now(),
+                ]);
+
+                return response()->json(['state' => 'success', 'message' => 'Data Inserted Successfully']);
+            }
+
+
+
+        } catch (QueryException $ex) {
+            return response()->json(['state' => 'failed', 'message' => $ex->getMessage()]);
+        }
+
     }
 }

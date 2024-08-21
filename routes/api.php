@@ -9,4 +9,7 @@ Route::get('/user', function (Request $request) {
 
 
 
-Route::get('/test', [App\Http\Controllers\AccountNaturalController::class, 'test'])->name('test');
+Route::post('/sync-up/LTStock', [App\Http\Controllers\LtStockController::class, 'upload'])->name('sync-up-LTStock');
+Route::post('/sync-up/DocType', [App\Http\Controllers\DocTypeController::class, 'upload'])->name('sync-up-DocType');
+
+Route::post('/sync-up/Doc', [App\Http\Controllers\DocController::class, 'upload'])->name('sync-up-Doc');

@@ -14,8 +14,6 @@ class Doc extends Model
 
     protected $fillable = [
         'DocID',
-        'AccountsTreeID',
-        'DOCTypeBasicID',
         'DocTypeBasicId',
         'FixedPart',
         'DBCode',
