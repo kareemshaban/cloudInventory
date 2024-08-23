@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DocEffect;
 use App\Models\DocType;
 use Carbon\Carbon;
 use Illuminate\Database\QueryException;
@@ -68,7 +69,6 @@ class DocTypeController extends Controller
     public function upload(Request $request)
     {
         try {
-            return count($request->docEffects ->);
             $docType = DocType::find($request->STDOCTypeID);
             if ($docType) {
                 $docType->update([
@@ -94,6 +94,7 @@ class DocTypeController extends Controller
                     'TimUpd' => Carbon::now(),
                 ]);
 
+                $this->insertDocEffects($request);
                 return response()->json(['state' => 'success', 'message' => 'Data Updated Successfully']);
             } else {
                 DocType::create([
@@ -119,6 +120,7 @@ class DocTypeController extends Controller
                     'UsrIns' => $request->UsrIns,
                     'TimIns' => Carbon::now(),
                 ]);
+                $this->insertDocEffects($request);
 
                 return response()->json(['state' => 'success', 'message' => 'Data Inserted Successfully']);
             }
@@ -134,6 +136,28 @@ class DocTypeController extends Controller
     public function insertDocEffects(Request $request)
     {
         for ($i = 0; $i < count($request->docEffects); $i++) {
+            $effect = DocEffect::find($request->docEffects[$i]['DocEffectID']);
+            if ($effect) {
+                $effect->update([
+                    'DocEffectDocID' => $request->docEffects[$i]['DocEffectDocID'],
+                    'DocEffectTYPE' => $request->docEffects[$i]['DocEffectTYPE'],
+                    'DocEffectFileID' => $request->docEffects[$i]['DocEffectFileID'],
+                    'DocEffectFileID1' => $request->docEffects[$i]['DocEffectFileID1'],
+                    'UsrUpd' => $request->docEffects[$i]['UsrUpd'],
+                    'TimUpd' => Carbon::now(),
+                ]);
+            } else {
+                DocEffect::create([
+                    'DocEffectID' => $request->docEffects[$i]['DocEffectID'],
+                    'DocEffectDocID' => $request->docEffects[$i]['DocEffectDocID'],
+                    'DocEffectTYPE' => $request->docEffects[$i]['DocEffectTYPE'],
+                    'DocEffectFileID' => $request->docEffects[$i]['DocEffectFileID'],
+                    'DocEffectFileID1' => $request->docEffects[$i]['DocEffectFileID1'],
+                    'UsrIns' => $request->docEffects[$i]['UsrUpd'],
+                    'TimIns' => Carbon::now(),
+                ]);
+
+            }
 
         }
 
