@@ -97,5 +97,6 @@ class Vendor extends Model
         'UsrIns',
         'TimIns',
         'UsrUpd',
+        'TimUpd'
     ];
 }
