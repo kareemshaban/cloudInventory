@@ -20,7 +20,6 @@ class CompanyInformation extends Model
         'ShortNameEN',
         'FullNameARFirst',
         'FullNameARSecond',
-        'EndContractDate',
         'FullNameENFirst',
         'FullNameENSecond',
         'Owner',

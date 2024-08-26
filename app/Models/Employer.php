@@ -44,7 +44,6 @@ class Employer extends Model
         'homeNo',
         'FamilyAddresse',
         'AccommodationNo',
-        'AccommodationNo',
         'AccommodationFinish',
         'passportNo',
         'passportEdit',
