@@ -12,6 +12,7 @@ class Levels extends Model
     protected $primaryKey = 'LevelID';
     protected $table = 'levels';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'LevelID',
         'LevelCode_Ar',

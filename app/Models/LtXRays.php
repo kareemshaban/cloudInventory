@@ -11,6 +11,7 @@ class LtXRays extends Model
     protected $primaryKey = 'X_RaysID';
     protected $table = 'ltx_rays';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'X_RaysID',
         'X_RaysCode_Ar',

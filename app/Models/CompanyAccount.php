@@ -12,6 +12,7 @@ class CompanyAccount extends Model
     protected $primaryKey = 'CompanyAccountId';
     protected $table = 'companyaccount';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'CompanyAccountId',

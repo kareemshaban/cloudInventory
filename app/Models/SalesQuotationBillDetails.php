@@ -12,6 +12,7 @@ class SalesQuotationBillDetails extends Model
     protected $primaryKey = 'SalesQuotationBillDetailsId';
     protected $table = 'salesquotationbilldetails';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SalesQuotationBillDetailsId',
         'ItemId',

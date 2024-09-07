@@ -11,6 +11,7 @@ class ZatcaResponse extends Model
     protected $primaryKey = 'id';
     protected $table = 'zatcaresponse';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'id',
         'invoice_no',

@@ -11,6 +11,7 @@ class LtAssetCatSecond extends Model
     protected $primaryKey = 'LtAssetCatSecondID';
     protected $table = 'ltassetcatsecond';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'LtAssetCatSecondID',
         'NameAr',

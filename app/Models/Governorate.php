@@ -12,6 +12,7 @@ class Governorate extends Model
     protected $primaryKey = 'GovernorateID';
     protected $table = 'governorate';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'GovernorateID',
         'CityID',

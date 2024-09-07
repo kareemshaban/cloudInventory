@@ -11,6 +11,7 @@ class Optics extends Model
     protected $primaryKey = 'OpticsId';
     protected $table = 'optics';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'OpticsId',
         'RightEyeSPH',

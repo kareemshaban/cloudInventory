@@ -12,6 +12,7 @@ class CarImages extends Model
     protected $primaryKey = 'ID';
     protected $table = 'carimages';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'ID',

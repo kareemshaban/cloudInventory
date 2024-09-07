@@ -12,6 +12,7 @@ class GoldCatchReceipt extends Model
     protected $primaryKey = 'ID';
     protected $table = 'goldcatchreceipt';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ID',
         'client_id',

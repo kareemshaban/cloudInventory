@@ -11,6 +11,7 @@ class ItemVat extends Model
     protected $primaryKey = 'ItemVatID';
     protected $table = 'itemvat';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ItemVatID',
         'VatID',

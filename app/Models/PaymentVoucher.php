@@ -11,6 +11,7 @@ class PaymentVoucher extends Model
     protected $primaryKey = 'PaymentVoucherID';
     protected $table = 'paymentvoucher';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PaymentVoucherID',
         'DocNo',

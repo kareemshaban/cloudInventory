@@ -11,6 +11,7 @@ class Vendor_Cars extends Model
     protected $primaryKey = 'VendorID';
     protected $table = 'vendor_cars';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'VendorID ',
         'Name',

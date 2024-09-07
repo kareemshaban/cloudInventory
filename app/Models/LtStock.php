@@ -12,6 +12,7 @@ class LtStock extends Model
     protected $primaryKey = 'StockID';
     protected $table = 'ltstock';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'StockID',
         'StockCode_Ar',

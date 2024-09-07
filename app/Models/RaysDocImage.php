@@ -11,6 +11,7 @@ class RaysDocImage extends Model
     protected $primaryKey = 'RaysDocImageID';
     protected $table = 'raysdocimage';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'RaysDocImageID',
         'RaysDocImageID',

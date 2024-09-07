@@ -11,6 +11,7 @@ class TaxPolicy extends Model
     protected $primaryKey = 'TaxpolicyID';
     protected $table = 'taxpolicy';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'TaxpolicyID',
         'NameAr',

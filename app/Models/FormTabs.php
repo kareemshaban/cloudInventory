@@ -12,6 +12,7 @@ class FormTabs extends Model
     protected $primaryKey = 'FormTabId';
     protected $table = 'formtabs';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'FormTabId',
         'FormTabName',

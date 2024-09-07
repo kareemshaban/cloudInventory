@@ -12,6 +12,7 @@ class IncidentalExpenses extends Model
     protected $primaryKey = 'IncidentalExpensesID';
     protected $table = 'incidentalexpenses';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'IncidentalExpensesID',
         'IncidentalExpensesDate',

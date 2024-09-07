@@ -11,6 +11,7 @@ class AssetType extends Model
     protected $primaryKey = 'AssetTypeID';
     protected $table = 'assettype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'AssetTypeID',
         'NameAR',

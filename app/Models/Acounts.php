@@ -11,6 +11,7 @@ class Acounts extends Model
     protected $primaryKey = 'AccountID';
     protected $table = 'acounts';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'AccountID',

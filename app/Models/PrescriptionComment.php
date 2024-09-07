@@ -11,6 +11,7 @@ class PrescriptionComment extends Model
     protected $primaryKey = 'PrescriptionCommentID';
     protected $table = 'prescriptioncomment';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PrescriptionCommentID',
         'PrescriptionID',

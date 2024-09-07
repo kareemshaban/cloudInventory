@@ -65,6 +65,19 @@ class EmployerController extends Controller
         //
     }
 
+    public function download()
+    {
+        try {
+            $employers = Employer::all();
+            return response()->json(['state' => 'success', 'employers' => $employers]);
+
+
+        } catch (QueryException $ex) {
+            return response()->json(['state' => 'failed', 'message' => $ex->getMessage()]);
+
+        }
+    }
+
     public function upload(Request $request)
     {
 
@@ -102,6 +115,7 @@ class EmployerController extends Controller
                     'homeNo' => $request->homeNo,
                     'FamilyAddresse' => $request->FamilyAddresse,
                     'AccommodationNo' => $request->AccommodationNo,
+                    'AccommodationEdit' => $request->AccommodationEdit,
                     'AccommodationFinish' => $request->AccommodationFinish,
                     'passportNo' => $request->passportNo,
                     'passportEdit' => $request->passportEdit,
@@ -198,6 +212,7 @@ class EmployerController extends Controller
                     'homeNo' => $request->homeNo,
                     'FamilyAddresse' => $request->FamilyAddresse,
                     'AccommodationNo' => $request->AccommodationNo,
+                    'AccommodationEdit' => $request->AccommodationEdit,
                     'AccommodationFinish' => $request->AccommodationFinish,
                     'passportNo' => $request->passportNo,
                     'passportEdit' => $request->passportEdit,

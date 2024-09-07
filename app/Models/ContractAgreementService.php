@@ -12,6 +12,7 @@ class ContractAgreementService extends Model
     protected $primaryKey = 'ContractAgreementServiceID';
     protected $table = 'contractagreementservice';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'ContractAgreementServiceID',

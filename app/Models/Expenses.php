@@ -12,6 +12,7 @@ class Expenses extends Model
     protected $primaryKey = 'ExpensesID';
     protected $table = 'expenses';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ExpensesID',
         'DocType',

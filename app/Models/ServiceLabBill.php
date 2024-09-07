@@ -11,6 +11,7 @@ class ServiceLabBill extends Model
     protected $primaryKey = 'ServiceLabBillID';
     protected $table = 'servicelabbill';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ServiceLabBillID',
         'BillID',

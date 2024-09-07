@@ -11,6 +11,7 @@ class RoomTransfer extends Model
     protected $primaryKey = 'RoomTransferID';
     protected $table = 'roomtransfer';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'RoomTransferID',
         'Code',

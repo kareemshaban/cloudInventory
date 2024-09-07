@@ -11,6 +11,7 @@ class City extends Model
     protected $primaryKey = 'CityID';
     protected $table = 'city';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'CityID',

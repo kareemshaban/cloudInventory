@@ -11,6 +11,7 @@ class MobileDevices extends Model
     protected $primaryKey = 'id';
     protected $table = 'mobile_devices';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'id',
         'device_serial',

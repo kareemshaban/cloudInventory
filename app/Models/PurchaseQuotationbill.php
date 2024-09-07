@@ -11,6 +11,7 @@ class PurchaseQuotationbill extends Model
     protected $primaryKey = 'PurchaseQuotationBillId';
     protected $table = 'purchasequotationbill';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PurchaseQuotationBillId',
         'DocType',

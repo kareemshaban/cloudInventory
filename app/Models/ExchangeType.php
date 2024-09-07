@@ -11,6 +11,7 @@ class ExchangeType extends Model
     protected $primaryKey = 'ExchangeTypeID';
     protected $table = 'exchangetype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ExchangeTypeID',
         'ExchangeTypeCode_Ar',

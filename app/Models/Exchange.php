@@ -12,6 +12,7 @@ class Exchange extends Model
     protected $primaryKey = 'ID';
     protected $table = 'exchange';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ID',
         'DocType',

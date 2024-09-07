@@ -12,6 +12,7 @@ class RestSetting extends Model
     protected $primaryKey = 'RestSettingID';
     protected $table = 'restsetting';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'RestSettingID',
         'DocTypeRestBillID',

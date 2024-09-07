@@ -11,6 +11,7 @@ class SexType extends Model
     protected $primaryKey = 'SexTypeID';
     protected $table = 'sextype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SexTypeID',
         'SexTypeCode_Ar',

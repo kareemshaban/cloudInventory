@@ -11,6 +11,7 @@ class SalaryTermAccountType extends Model
     protected $primaryKey = 'SalaryTermAccountTypeID';
     protected $table = 'salarytermaccounttype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SalaryTermAccountTypeID',
         'AccountTypeAR',

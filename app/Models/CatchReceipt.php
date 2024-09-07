@@ -12,6 +12,7 @@ class CatchReceipt extends Model
     protected $primaryKey = 'ID';
     protected $table = 'catchreceipt';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'ID',

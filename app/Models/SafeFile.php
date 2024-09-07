@@ -11,6 +11,7 @@ class SafeFile extends Model
     protected $primaryKey = 'SafekFileID';
     protected $table = 'safefile';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SafekFileID',
         'CodeAR',

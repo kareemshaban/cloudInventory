@@ -11,6 +11,7 @@ class LtNationality extends Model
     protected $primaryKey = 'NationalityID';
     protected $table = 'ltnationality';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'NationalityID',
         'NationalityCode_Ar',

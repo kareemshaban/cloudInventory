@@ -12,6 +12,7 @@ class AcountFirstCatogry extends Model
     protected $primaryKey = 'AcountFirstCatogryID';
     protected $table = 'acountfirstcatogry';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'AcountFirstCatogryID',

@@ -11,6 +11,7 @@ class TableWithFields extends Model
     protected $primaryKey = 'FeildID';
     protected $table = 'tableswithfeilds';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'FeildID',
         'column_name',

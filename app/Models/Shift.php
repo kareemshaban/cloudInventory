@@ -11,6 +11,7 @@ class Shift extends Model
     protected $primaryKey = 'ShiftNO';
     protected $table = 'shift';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ShiftNO',
         'UserID',

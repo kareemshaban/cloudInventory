@@ -12,6 +12,7 @@ class FormAuthentication extends Model
     protected $primaryKey = 'FormAuthenticationID';
     protected $table = 'formauthentication';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'FormAuthenticationID',
         'LoginID',

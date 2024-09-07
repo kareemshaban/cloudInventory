@@ -11,6 +11,7 @@ class CommonattAchments extends Model
     protected $primaryKey = 'AttachmentID';
     protected $table = 'commonattachments';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'AttachmentID',

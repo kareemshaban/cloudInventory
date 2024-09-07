@@ -11,6 +11,7 @@ class LtSymptom extends Model
     protected $primaryKey = 'SymptomID';
     protected $table = 'ltsymptom';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SymptomID',
         'SymptomCode',

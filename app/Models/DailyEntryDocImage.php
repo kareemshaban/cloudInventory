@@ -11,6 +11,7 @@ class DailyEntryDocImage extends Model
     protected $primaryKey = 'DailyEntryDocImageID';
     protected $table = 'dailyentrydocimage';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'DailyEntryDocImageID',

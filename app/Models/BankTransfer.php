@@ -11,6 +11,7 @@ class BankTransfer extends Model
     protected $primaryKey = 'BankTransferId';
     protected $table = 'banktransfer';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'BankTransferId',

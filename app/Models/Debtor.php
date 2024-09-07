@@ -11,6 +11,7 @@ class Debtor extends Model
     protected $primaryKey = 'DebtorID';
     protected $table = 'debtor';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'DebtorID',

@@ -11,6 +11,7 @@ class Settings extends Model
     protected $primaryKey = 'SettingsId';
     protected $table = 'settings';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SettingsId',
         'SettingsPOS',

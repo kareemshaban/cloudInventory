@@ -11,6 +11,7 @@ class BloodType extends Model
     protected $primaryKey = 'BloodTypeID';
     protected $table = 'bloodtype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'BloodTypeID',

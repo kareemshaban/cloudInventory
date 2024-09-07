@@ -12,6 +12,7 @@ class LtClinic extends Model
     protected $primaryKey = 'ClinicID';
     protected $table = 'ltclinic';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ClinicID',
         'ClinicCode_Ar',

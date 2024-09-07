@@ -11,6 +11,7 @@ class StItemsCategoryType extends Model
     protected $primaryKey = 'ID';
     protected $table = 'stitemscategorytype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ID',
         'ItemID',

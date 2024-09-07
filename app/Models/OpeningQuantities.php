@@ -12,6 +12,7 @@ class OpeningQuantities extends Model
     protected $primaryKey = 'OpenningQuantitiesId';
     protected $table = 'openningquantities';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'OpenningQuantitiesId',
         'DocType',

@@ -12,6 +12,7 @@ class StockPrimaryAccount extends Model
     protected $primaryKey = 'StockPrimaryAccountID';
     protected $table = 'stockprimaryaccount';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'StockPrimaryAccountID',
         'StockID',

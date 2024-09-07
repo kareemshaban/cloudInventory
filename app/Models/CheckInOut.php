@@ -12,6 +12,7 @@ class CheckInOut extends Model
     protected $primaryKey = 'CheckInOutID';
     protected $table = 'checkinout';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'CheckInOutID',

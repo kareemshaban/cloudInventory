@@ -12,6 +12,7 @@ class OfferDay extends Model
     protected $primaryKey = 'OfferDayID';
     protected $table = 'offerday';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'OfferDayID',
         'WeakDaysId',

@@ -11,6 +11,7 @@ class Cost extends Model
     protected $primaryKey = 'CostID';
     protected $table = 'cost';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'CostID',

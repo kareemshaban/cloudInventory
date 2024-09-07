@@ -11,6 +11,7 @@ class Commission extends Model
     protected $primaryKey = 'CommissionID';
     protected $table = 'commission';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'CommissionID',

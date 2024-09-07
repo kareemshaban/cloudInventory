@@ -12,6 +12,7 @@ class LtMeasureUnit extends Model
     protected $primaryKey = 'MeasureUnitID';
     protected $table = 'ltmeasureunit';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'MeasureUnitID',
         'MeasureUnitCode_Ar',

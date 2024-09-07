@@ -11,6 +11,7 @@ class Prescription extends Model
     protected $primaryKey = 'PrescriptionID ';
     protected $table = 'prescription';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PrescriptionID ',
         'VendorID',

@@ -11,6 +11,7 @@ class LtPriceSystemType extends Model
     protected $primaryKey = 'PriceSystemTypeID';
     protected $table = 'ltpricesystemtype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PriceSystemTypeID',
         'PriceSystemTypeCode_Ar',

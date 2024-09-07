@@ -12,6 +12,7 @@ class LtTable extends Model
     protected $primaryKey = 'TableID';
     protected $table = 'lttable';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'TableID',
         'HallID',

@@ -11,6 +11,7 @@ class Login extends Model
     protected $primaryKey = 'LoginID';
     protected $table = 'login';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'LoginID',
         'UserName',

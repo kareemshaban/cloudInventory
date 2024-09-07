@@ -11,6 +11,7 @@ class PayBill extends Model
     protected $primaryKey = 'PayBillID';
     protected $table = 'paybill';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PayBillID',
         'BillID',

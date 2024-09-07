@@ -11,6 +11,7 @@ class Voucher extends Model
     protected $primaryKey = 'id';
     protected $table = 'voucher';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'VendorID ',
         'no',

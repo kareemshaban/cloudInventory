@@ -12,6 +12,7 @@ class EmployerComment extends Model
     protected $primaryKey = 'EmployerCommentID';
     protected $table = 'employercomment';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'EmployerCommentID',

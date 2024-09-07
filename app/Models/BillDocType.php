@@ -12,6 +12,7 @@ class BillDocType extends Model
     protected $primaryKey = 'BillDocTypeID';
     protected $table = 'billdoctype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'BillDocTypeID',

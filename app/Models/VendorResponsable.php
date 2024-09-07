@@ -11,6 +11,7 @@ class VendorResponsable extends Model
     protected $primaryKey = 'VendorResponsableID';
     protected $table = 'vendorresponsable';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'VendorResponsableID',
         'NameEN',

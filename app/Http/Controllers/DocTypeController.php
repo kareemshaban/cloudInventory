@@ -66,6 +66,23 @@ class DocTypeController extends Controller
         //
     }
 
+    public function download()
+    {
+        try {
+            $docTypes = DocType::all();
+            foreach ($docTypes as $docType) {
+                $docEffects = DocEffect::where('DocEffectTYPE', '=', $docType->STDOCTypeID)->get();
+                $docType->docEffects = $docEffects;
+            }
+            return response()->json(['state' => 'success', 'docTypes' => $docTypes]);
+
+
+        } catch (QueryException $ex) {
+            return response()->json(['state' => 'failed', 'message' => $ex->getMessage()]);
+
+        }
+    }
+
     public function upload(Request $request)
     {
         try {

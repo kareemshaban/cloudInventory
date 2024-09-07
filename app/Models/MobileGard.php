@@ -12,6 +12,7 @@ class MobileGard extends Model
     protected $primaryKey = 'id';
     protected $table = 'mobile_gard';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'id',
         'product_code',

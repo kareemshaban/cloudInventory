@@ -11,6 +11,7 @@ class Registeration extends Model
     protected $primaryKey = 'RegisterationID';
     protected $table = 'registeration';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'RegisterationID',
         'VendorID',

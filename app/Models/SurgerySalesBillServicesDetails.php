@@ -11,6 +11,7 @@ class SurgerySalesBillServicesDetails extends Model
     protected $primaryKey = 'DetailsId';
     protected $table = 'surgerysalesbillservicesdetails';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'DetailsId',
         'ServiceID',

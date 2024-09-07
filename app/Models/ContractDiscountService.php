@@ -12,6 +12,7 @@ class ContractDiscountService extends Model
     protected $primaryKey = 'ContractDiscountServiceID';
     protected $table = 'contractdiscountservice';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'ContractDiscountServiceID',

@@ -11,6 +11,7 @@ class ContractType extends Model
     protected $primaryKey = 'ContractTypeID';
     protected $table = 'contracttype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'ContractTypeID',

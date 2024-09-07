@@ -11,6 +11,7 @@ class Service extends Model
     protected $primaryKey = 'ServiceID';
     protected $table = 'service';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ServiceID',
         'ServiceNameAr',

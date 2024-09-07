@@ -11,6 +11,7 @@ class PurchaseReturnBillDetails extends Model
     protected $primaryKey = 'PurchaseReturnBillDetailsId';
     protected $table = 'purchasereturnbilldetails';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PurchaseReturnBillDetailsId',
         'ItemId',

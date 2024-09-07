@@ -11,6 +11,7 @@ class SalaryTermsFieldApplay extends Model
     protected $primaryKey = 'SalaryTermsFeildApplayID';
     protected $table = 'salarytermsfeildapplay';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SalaryTermsFeildApplayID',
         'Code',

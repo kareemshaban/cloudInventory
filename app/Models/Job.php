@@ -12,6 +12,7 @@ class Job extends Model
     protected $primaryKey = 'JobID';
     protected $table = 'job';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'JobID',
         'JobCode_Ar',

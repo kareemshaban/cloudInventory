@@ -11,6 +11,7 @@ class VendorAnalysis extends Model
     protected $primaryKey = 'VendorAnalysisID';
     protected $table = 'vendoranalysis';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'VendorAnalysisID',
         'PrescriptionID',

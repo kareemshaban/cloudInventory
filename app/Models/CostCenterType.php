@@ -11,6 +11,7 @@ class CostCenterType extends Model
     protected $primaryKey = 'CostCenterTypeID';
     protected $table = 'costcentertype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'CostCenterTypeID',

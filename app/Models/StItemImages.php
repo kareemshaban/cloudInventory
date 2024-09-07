@@ -11,6 +11,7 @@ class StItemImages extends Model
     protected $primaryKey = 'ID';
     protected $table = 'stitemimages';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ID',
         'ItemID',

@@ -11,6 +11,7 @@ class Delegator extends Model
     protected $primaryKey = 'id';
     protected $table = 'delegator';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'id',

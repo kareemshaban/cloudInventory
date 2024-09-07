@@ -12,6 +12,7 @@ class LtCurrency extends Model
     protected $primaryKey = 'CurrencyID';
     protected $table = 'ltcurrency';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'CurrencyID',
         'CurrencyCode_Ar',

@@ -11,6 +11,7 @@ class RestSalesBill extends Model
     protected $primaryKey = 'SalesBillId';
     protected $table = 'restsalesbill';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SalesBillId',
         'DocType',

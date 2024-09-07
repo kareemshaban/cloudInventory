@@ -11,6 +11,7 @@ class LtColor extends Model
     protected $primaryKey = 'ColorID';
     protected $table = 'ltcolor';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ColorID',
         'ColorCode_Ar',

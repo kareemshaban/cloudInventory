@@ -11,6 +11,7 @@ class StItemAlternatives extends Model
     protected $primaryKey = 'ItemID';
     protected $table = 'stitemalternatives';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ItemID',
         'AlternativeItemID',

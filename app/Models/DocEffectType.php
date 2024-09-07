@@ -11,6 +11,7 @@ class DocEffectType extends Model
     protected $primaryKey = 'DocEffectTYPEID';
     protected $table = 'doceffecttype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'DocEffectTYPEID',

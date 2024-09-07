@@ -11,6 +11,7 @@ class VendorThirdCategory extends Model
     protected $primaryKey = 'VendorCatogryID';
     protected $table = 'vendorthirdcatogry';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'VendorCatogryID',
         'Code',

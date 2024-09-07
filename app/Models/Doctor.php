@@ -11,6 +11,7 @@ class Doctor extends Model
     protected $primaryKey = 'DoctorID';
     protected $table = 'doctor';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'DoctorID',

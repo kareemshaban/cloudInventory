@@ -11,6 +11,7 @@ class Authentication extends Model
     protected $primaryKey = 'AuthenticationID';
     protected $table = 'authentication';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'AuthenticationID',
         'LoginID',

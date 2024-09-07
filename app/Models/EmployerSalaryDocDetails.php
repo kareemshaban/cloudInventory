@@ -11,6 +11,7 @@ class EmployerSalaryDocDetails extends Model
     protected $primaryKey = 'EmployerSalaryDocDetailsID';
     protected $table = 'employersalarydocdetails';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'EmployerSalaryDocDetailsID',
         'EmployerSalaryDocID',

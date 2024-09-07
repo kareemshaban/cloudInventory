@@ -11,6 +11,7 @@ class FixedAsset extends Model
     protected $primaryKey = 'FixedAssetID';
     protected $table = 'fixedasset';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'FixedAssetID',
         'Code',

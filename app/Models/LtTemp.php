@@ -12,6 +12,7 @@ class LtTemp extends Model
     protected $primaryKey = 'TempID';
     protected $table = 'lttemp';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'TempID',
         'TempCode_Ar',

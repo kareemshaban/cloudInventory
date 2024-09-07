@@ -11,6 +11,7 @@ class EmpCostSecond extends Model
     protected $primaryKey = 'EmpCostSecondID';
     protected $table = 'empcostsecond';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'EmpCostSecondID',

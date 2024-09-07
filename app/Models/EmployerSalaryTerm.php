@@ -11,6 +11,7 @@ class EmployerSalaryTerm extends Model
     protected $primaryKey = 'EmployerSalaryTermID';
     protected $table = 'employersalaryterm';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'EmployerSalaryTermID',
         'EmployerID',

@@ -11,6 +11,7 @@ class TotalAddedValue extends Model
     protected $primaryKey = 'TotalAddedValueId';
     protected $table = 'totaladdedvalue';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'TotalAddedValueId',
         'Date',

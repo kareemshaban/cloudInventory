@@ -11,6 +11,7 @@ class SalesBillServicesDetails extends Model
     protected $primaryKey = 'DetailsId';
     protected $table = 'salesbillservicesdetails';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'DetailsId',
         'ServiceID',

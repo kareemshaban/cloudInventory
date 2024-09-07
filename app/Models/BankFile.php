@@ -11,6 +11,7 @@ class BankFile extends Model
     protected $primaryKey = 'BankFileID';
     protected $table = 'bankfile';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'BankFileID',

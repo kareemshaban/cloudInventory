@@ -11,6 +11,7 @@ class EmployerPercentage extends Model
     protected $primaryKey = 'id';
     protected $table = 'employer_percentage';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'id',
         'employer_id',

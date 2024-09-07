@@ -12,6 +12,7 @@ class LtWeight extends Model
     protected $primaryKey = 'WeightID';
     protected $table = 'ltweight';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'WeightID',
         'WeightCode_Ar',

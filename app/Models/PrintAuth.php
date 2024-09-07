@@ -11,6 +11,7 @@ class PrintAuth extends Model
     protected $primaryKey = 'PrintAuthID';
     protected $table = 'printauth';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PrintAuthID',
         'DOCTypeBasicID',

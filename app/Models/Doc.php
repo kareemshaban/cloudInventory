@@ -11,6 +11,9 @@ class Doc extends Model
     protected $primaryKey = 'DocID';
     protected $table = 'doc';
     public $timestamps = false;
+ protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
+
+
 
     protected $fillable = [
         'DocID',
@@ -36,5 +39,6 @@ class Doc extends Model
         'TimIns',
         'UsrUpd',
         'TimUpd'
+
     ];
 }

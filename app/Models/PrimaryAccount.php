@@ -11,6 +11,7 @@ class PrimaryAccount extends Model
     protected $primaryKey = 'PrimaryAccountID';
     protected $table = 'primaryaccount';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PrimaryAccountID',
         'Name',

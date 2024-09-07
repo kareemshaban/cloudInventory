@@ -11,6 +11,7 @@ class VendorTreatment extends Model
     protected $primaryKey = 'VendorTreatmentID';
     protected $table = 'vendortreatment';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'VendorTreatmentID',
         'PrescriptionID',

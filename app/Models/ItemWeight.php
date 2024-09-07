@@ -12,6 +12,7 @@ class ItemWeight extends Model
     protected $primaryKey = 'ID';
     protected $table = 'itemweight';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ID',
         'ItemID',

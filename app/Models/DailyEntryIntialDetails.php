@@ -12,6 +12,7 @@ class DailyEntryIntialDetails extends Model
     protected $primaryKey = 'DailyEntryIntialDetailsID';
     protected $table = 'dailyentryintialdetails';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'DailyEntryIntialDetailsID',

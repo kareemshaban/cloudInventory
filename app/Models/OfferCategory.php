@@ -11,6 +11,7 @@ class OfferCategory extends Model
     protected $primaryKey = 'OfferCatogryID';
     protected $table = 'offercatogry';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'OfferCatogryID',
         'OfferID',

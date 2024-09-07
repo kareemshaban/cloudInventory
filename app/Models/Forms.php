@@ -12,6 +12,7 @@ class Forms extends Model
     protected $primaryKey = 'FormId';
     protected $table = 'forms';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'FormId',
         'FormName',

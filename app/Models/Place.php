@@ -11,6 +11,7 @@ class Place extends Model
     protected $primaryKey = 'PlaceId';
     protected $table = 'place';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PlaceId',
         'Code',

@@ -11,6 +11,7 @@ class SeveralPaymentWays extends Model
     protected $primaryKey = 'SeveralPaymentWaysID';
     protected $table = 'severalpaymentways';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SeveralPaymentWaysID',
         'SeveralPaymentWaysCode_Ar',

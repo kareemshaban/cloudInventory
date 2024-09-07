@@ -11,6 +11,7 @@ class SurgeryServices extends Model
     protected $primaryKey = 'SurgeryServiceID';
     protected $table = 'surgeryservices';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SurgeryServiceID',
         'ServiceID',

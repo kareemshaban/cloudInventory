@@ -11,6 +11,7 @@ class SalesReturnBill extends Model
     protected $primaryKey = 'SalesReturnBillId';
     protected $table = 'salesreturnbill';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SalesReturnBillId',
         'DocType',

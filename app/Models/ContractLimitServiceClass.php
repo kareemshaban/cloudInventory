@@ -12,6 +12,7 @@ class ContractLimitServiceClass extends Model
     protected $primaryKey = 'ContractLimitServiceClassID';
     protected $table = 'contractlimitserviceclass';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'ContractLimitServiceClassID',

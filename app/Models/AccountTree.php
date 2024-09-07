@@ -11,6 +11,7 @@ class AccountTree extends Model
     protected $primaryKey = 'AccountTreeId';
     protected $table = 'accounttree';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'AccountTreeId',

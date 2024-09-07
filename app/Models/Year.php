@@ -11,6 +11,7 @@ class Year extends Model
     protected $primaryKey = 'YearID';
     protected $table = 'year';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'YearID',
         'YearName',

@@ -11,6 +11,7 @@ class Points extends Model
     protected $primaryKey = 'ID';
     protected $table = 'points';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ID',
         'FromPrice',

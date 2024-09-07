@@ -11,6 +11,7 @@ class RaysDoc extends Model
     protected $primaryKey = 'RaysDocID';
     protected $table = 'raysdoc';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'RaysDocID',
         'RaysDocDate',

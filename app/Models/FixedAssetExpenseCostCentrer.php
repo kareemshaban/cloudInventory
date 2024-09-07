@@ -12,6 +12,7 @@ class FixedAssetExpenseCostCentrer extends Model
     protected $primaryKey = 'FixedAssetExpensesCostCenterID';
     protected $table = 'fixedassetexpensescostcenter';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'FixedAssetExpensesCostCenterID',
         'CostcenterID',

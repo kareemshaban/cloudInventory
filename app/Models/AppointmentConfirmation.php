@@ -11,6 +11,7 @@ class AppointmentConfirmation extends Model
     protected $primaryKey = 'ConfirmationID';
     protected $table = 'appointmentconfirmation';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ConfirmationID',
         'ConfirmationCode',

@@ -11,6 +11,7 @@ class RoomRegister extends Model
     protected $primaryKey = 'RoomRegisterID';
     protected $table = 'roomregister';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'RoomRegisterID',
         'Code',

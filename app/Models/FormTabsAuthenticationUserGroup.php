@@ -12,6 +12,7 @@ class FormTabsAuthenticationUserGroup extends Model
     protected $primaryKey = 'FormTabsAuthenticationID';
     protected $table = 'formtabsauthenticationusergroup';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'FormTabsAuthenticationID',
         'UserGroupId',

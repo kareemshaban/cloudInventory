@@ -12,6 +12,7 @@ class InstallmentType extends Model
     protected $primaryKey = 'InstallmentTypeID';
     protected $table = 'installmenttype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'InstallmentTypeID',
         'InstallmentName',

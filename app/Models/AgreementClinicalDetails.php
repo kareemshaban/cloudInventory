@@ -11,6 +11,7 @@ class AgreementClinicalDetails extends Model
     protected $primaryKey = 'AgreeMentClinicalDetailsID';
     protected $table = 'agreementclinicaldetails';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'AgreeMentClinicalDetailsID',

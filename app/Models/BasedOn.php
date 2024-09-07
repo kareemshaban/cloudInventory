@@ -12,6 +12,7 @@ class BasedOn extends Model
     protected $primaryKey = 'BasedOnId';
     protected $table = 'basedon';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'BarCodeDesignHeader_id',

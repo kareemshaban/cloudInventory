@@ -11,6 +11,7 @@ class PatientClass extends Model
     protected $primaryKey = 'PatientClassID';
     protected $table = 'patientclass';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PatientClassID',
         'PatientClassAR',

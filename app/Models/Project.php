@@ -11,6 +11,7 @@ class Project extends Model
     protected $primaryKey = 'ProjectId';
     protected $table = 'project';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ProjectId',
         'ProjectName',

@@ -11,6 +11,7 @@ class CarHistory extends Model
     protected $primaryKey = 'CarHistoryID';
     protected $table = 'carhistory';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'CarHistoryID',

@@ -11,6 +11,7 @@ class ContractNotcoveredCategoryClass extends Model
     protected $primaryKey = 'ContractNotCoveredCategoryClassID';
     protected $table = 'contractnotcoveredcategoryclass';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'ContractNotCoveredCategoryClassID',

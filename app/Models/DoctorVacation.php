@@ -11,6 +11,7 @@ class DoctorVacation extends Model
     protected $primaryKey = 'DoctorVacationID';
     protected $table = 'doctorvacation';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'DoctorVacationID',

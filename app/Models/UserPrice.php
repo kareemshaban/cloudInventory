@@ -11,6 +11,7 @@ class UserPrice extends Model
     protected $primaryKey = 'UserPriceID';
     protected $table = 'userprice';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'UserPriceID',
         'LoginID',

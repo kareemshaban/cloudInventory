@@ -12,6 +12,7 @@ class Education extends Model
     protected $primaryKey = 'EducationID';
     protected $table = 'education';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'EducationID',

@@ -12,6 +12,7 @@ class LtCategoryThree extends Model
     protected $primaryKey = 'ID';
     protected $table = 'ltcategorythree';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ID',
         'CategoryThreeCode_Ar',

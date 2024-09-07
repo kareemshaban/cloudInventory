@@ -11,6 +11,7 @@ class LtPeriodTYpe extends Model
     protected $primaryKey = 'PeriodTypeID';
     protected $table = 'ltperiodtype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PeriodTypeID',
         'PeriodTypeCode_Ar',

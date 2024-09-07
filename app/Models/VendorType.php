@@ -11,6 +11,7 @@ class VendorType extends Model
     protected $primaryKey = 'VendorTypeID';
     protected $table = 'vendortype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'VendorTypeID',
         'VendorTypCodee_Ar',

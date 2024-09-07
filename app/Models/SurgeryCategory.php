@@ -11,6 +11,7 @@ class SurgeryCategory extends Model
     protected $primaryKey = 'SurgeryCatogryID';
     protected $table = 'surgerycatogry';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SurgeryCatogryID',
         'NameAr',

@@ -11,6 +11,7 @@ class DocTypeBasic extends Model
     protected $primaryKey = ' DOCTypeBasicID';
     protected $table = 'doctypebasic';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'DOCTypeBasicID',

@@ -11,6 +11,7 @@ class TrnsLogs extends Model
     protected $primaryKey = 'id';
     protected $table = 'trns_logs';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'id',
         'file_name',

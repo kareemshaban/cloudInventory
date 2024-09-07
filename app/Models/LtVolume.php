@@ -12,6 +12,7 @@ class LtVolume extends Model
     protected $primaryKey = 'VolumeID';
     protected $table = 'ltvolume';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'VolumeID',
         'VolumeCode_Ar',

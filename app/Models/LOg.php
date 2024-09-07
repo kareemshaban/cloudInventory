@@ -11,6 +11,7 @@ class LOg extends Model
     protected $primaryKey = 'LogID';
     protected $table = 'log';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'LogID',
         'FormID',

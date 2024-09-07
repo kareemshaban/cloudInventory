@@ -12,6 +12,7 @@ class ItemSize extends Model
     protected $primaryKey = 'ID';
     protected $table = 'itemsize';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ID',
         'ItemID',

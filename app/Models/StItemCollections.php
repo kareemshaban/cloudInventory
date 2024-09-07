@@ -11,6 +11,7 @@ class StItemCollections extends Model
     protected $primaryKey = 'ID';
     protected $table = 'stitemcollections';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ID',
         'MainItemID',

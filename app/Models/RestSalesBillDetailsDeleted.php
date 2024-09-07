@@ -11,6 +11,7 @@ class RestSalesBillDetailsDeleted extends Model
     protected $primaryKey = 'RestSalesBillDetailsDeletedId';
     protected $table = 'restsalesbilldetailsdeleted';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'RestSalesBillDetailsDeletedId',
         'RestSalesBillId',

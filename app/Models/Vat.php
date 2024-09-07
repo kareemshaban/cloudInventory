@@ -11,6 +11,7 @@ class Vat extends Model
     protected $primaryKey = 'VatID';
     protected $table = 'vat';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'VatID',
         'NameAR',

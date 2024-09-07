@@ -65,12 +65,28 @@ class CatchReceiptController extends Controller
         //
     }
 
+
+
+    public function download()
+    {
+        try {
+            $catchReceipts = CatchReceipt::all();
+            return response()->json(['state' => 'success', 'catchReceipts' => $catchReceipts]);
+
+
+        } catch (QueryException $ex) {
+            return response()->json(['state' => 'failed', 'message' => $ex->getMessage()]);
+
+        }
+    }
+
     public function upload(Request $request)
     {
 
         try {
-            $catchRecipit = CatchReceipt::find($request->node);
-            if ($catchRecipit) {
+            $catchRecipits = CatchReceipt::where('node', '= ', $request->nodeKey)->get();
+            if (count($catchRecipits) > 0) {
+                $catchRecipit = $catchRecipits[0];
                 $catchRecipit->update([
                     'DocType' => $request->DocType,
                     'BillNo' => $request->BillNo,
@@ -93,7 +109,7 @@ class CatchReceiptController extends Controller
                     'edited' => $request->edited,
                     'isRetrieved' => $request->isRetrieved,
                     'docNo' => $request->docNo,
-                    'node' => $request->node,
+                    'node' => $request->nodeKey,
                     'uploaded' => $request->uploaded,
                     'UsrUpd' => $request->UsrUpd,
                     'TimUpd' => Carbon::now()
@@ -102,7 +118,6 @@ class CatchReceiptController extends Controller
                 return response()->json(['state' => 'success', 'message' => 'Data Updated Successfully']);
             } else {
                 CatchReceipt::create([
-                    'ID' => $request->ID,
                     'DocType' => $request->DocType,
                     'BillNo' => $request->BillNo,
                     'DocID' => $request->DocID,
@@ -124,7 +139,7 @@ class CatchReceiptController extends Controller
                     'edited' => $request->edited,
                     'isRetrieved' => $request->isRetrieved,
                     'docNo' => $request->docNo,
-                    'node' => $request->node,
+                    'node' => $request->nodeKey,
                     'uploaded' => $request->uploaded,
                     'UsrIns' => $request->UsrIns,
                     'TimIns' => Carbon::now()

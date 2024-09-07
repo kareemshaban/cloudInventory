@@ -11,6 +11,7 @@ class LtSize extends Model
     protected $primaryKey = 'SizeID';
     protected $table = 'ltsize';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SizeID',
         'SizeCode_Ar',

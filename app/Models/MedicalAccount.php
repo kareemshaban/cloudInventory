@@ -12,6 +12,7 @@ class MedicalAccount extends Model
     protected $primaryKey = 'MedicalAccountID';
     protected $table = 'medicalaccount';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'MedicalAccountID',
         'BoxAccountID',

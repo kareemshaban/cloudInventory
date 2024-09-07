@@ -11,6 +11,7 @@ class PrescriptionxRays extends Model
     protected $primaryKey = 'PrescriptionX_RaysID';
     protected $table = 'prescriptionx_rays';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PrescriptionX_RaysID',
         'X_RaysID',

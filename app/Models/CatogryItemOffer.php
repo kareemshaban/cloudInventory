@@ -12,6 +12,7 @@ class CatogryItemOffer extends Model
     protected $primaryKey = 'CatogryItemOfferID';
     protected $table = 'catogryitemoffer';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'CatogryItemOfferID',

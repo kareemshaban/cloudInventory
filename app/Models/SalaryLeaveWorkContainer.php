@@ -11,6 +11,7 @@ class SalaryLeaveWorkContainer extends Model
     protected $primaryKey = 'SalaryLeaveWorkContainerID';
     protected $table = 'salaryleaveworkcontainer';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SalaryLeaveWorkContainerID',
         'Code',

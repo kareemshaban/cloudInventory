@@ -12,6 +12,7 @@ class NotRegisteredCustomers extends Model
     protected $primaryKey = 'id';
     protected $table = 'not_registered_customers';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'id',
         'name',

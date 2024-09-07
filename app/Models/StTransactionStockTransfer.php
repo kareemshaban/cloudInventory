@@ -12,6 +12,7 @@ class StTransactionStockTransfer extends Model
     protected $primaryKey = 'TransactionTransferID';
     protected $table = 'sttransactionstocktransfer';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'TransactionTransferID',
         'DocNo',

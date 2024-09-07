@@ -11,6 +11,7 @@ class OpeningBalancesAccountDetails extends Model
     protected $primaryKey = 'OpeningBalancesAccountDetailsID';
     protected $table = 'openingbalancesaccountdetails';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'OpeningBalancesAccountDetailsID',
         'OpeningBalancesAccountID',

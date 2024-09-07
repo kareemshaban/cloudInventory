@@ -11,6 +11,7 @@ class StItemAttachments extends Model
     protected $primaryKey = 'ID';
     protected $table = 'stitemattachments';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ID',
         'ItemID',

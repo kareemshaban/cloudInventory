@@ -11,6 +11,7 @@ class CostCenterThirdCategory extends Model
     protected $primaryKey = 'CostcenterThirdCatogryID';
     protected $table = 'costcenterthirdcatogry';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'CostcenterThirdCatogryID',

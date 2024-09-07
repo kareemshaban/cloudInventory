@@ -11,6 +11,7 @@ class Appointement extends Model
     protected $primaryKey = 'AppointementID';
     protected $table = 'appointement';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'AppointementID',

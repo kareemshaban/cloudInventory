@@ -12,6 +12,7 @@ class FormControl extends Model
     protected $primaryKey = 'ControlID';
     protected $table = 'formcontrol';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ControlID',
         'FormID',

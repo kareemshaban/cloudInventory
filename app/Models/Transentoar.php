@@ -11,6 +11,7 @@ class Transentoar extends Model
     protected $primaryKey = 'id';
     protected $table = 'transentoar';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'id',
         'english',

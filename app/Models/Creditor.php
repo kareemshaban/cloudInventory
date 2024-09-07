@@ -12,6 +12,7 @@ class Creditor extends Model
     protected $primaryKey = 'Creditor_id';
     protected $table = 'creditor';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'Creditor_id',

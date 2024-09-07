@@ -12,6 +12,7 @@ class DailyIntialFirstCostCenter extends Model
     protected $primaryKey = 'DailyIntialFirstCostCenterID';
     protected $table = 'dailyintialfirstcostcenter';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'DailyIntialFirstCostCenterID',

@@ -11,6 +11,7 @@ class PrinterSetting extends Model
     protected $primaryKey = 'PrintersettingID';
     protected $table = 'printersetting';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PrintersettingID',
         'IsWithHearder',

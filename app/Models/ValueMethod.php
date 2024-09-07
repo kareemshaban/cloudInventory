@@ -11,6 +11,7 @@ class ValueMethod extends Model
     protected $primaryKey = 'ValueMethodID';
     protected $table = 'valuemethod';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ValueMethodID',
         'Code',

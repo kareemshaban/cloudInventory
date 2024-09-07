@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Exchange;
+use App\Models\Expenses;
+use Carbon\Carbon;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class ExchangeController extends Controller
@@ -62,4 +65,90 @@ class ExchangeController extends Controller
     {
         //
     }
+
+    public function download()
+    {
+        try {
+            $data = Exchange::all();
+
+            return response()->json(['state' => 'success', 'data' => $data]);
+
+
+        } catch (QueryException $ex) {
+            return response()->json(['state' => 'failed', 'message' => $ex->getMessage()]);
+
+        }
+    }
+
+    public function upload(Request $request)
+    {
+        try {
+            $objs = Exchange::where('nodeKey', '=', $request->nodeKey)->get();
+            if (count($objs) > 0) {
+                $obj = $objs[0];
+                $obj->update([
+                    'DocType' => $request->DocType,
+                    'BillNo' => $request->BillNo,
+                    'DocID' => $request->DocID,
+                    'Date' => $request->Date,
+                    'Vendor' => $request->Vendor,
+                    'Entry' => $request->Entry,
+                    'Details' => $request->Details,
+                    'Amount' => $request->Amount,
+                    'BankName' => $request->BankName,
+                    'ChickNo' => $request->ChickNo,
+                    'Payee' => $request->Payee,
+                    'BankNotes' => $request->BankNotes,
+                    'Collecter' => $request->Collecter,
+                    'Approved' => $request->Approved,
+                    'Patient' => $request->Patient,
+                    'Company' => $request->Company,
+                    'edited' => $request->edited,
+                    'isRetrieved' => $request->isRetrieved,
+                    'VendorBillNo' => $request->VendorBillNo,
+                    'uploaded' => $request->uploaded,
+                    'UsrUpd' => $request->UsrUpd,
+                ]);
+
+                return response()->json(['state' => 'success', 'message' => 'Data Inserted Successfully']);
+
+            } else {
+                Exchange::create([
+                    'DocType' => $request->DocType,
+                    'BillNo' => $request->BillNo,
+                    'DocID' => $request->DocID,
+                    'Date' => $request->Date,
+                    'Vendor' => $request->Vendor,
+                    'Entry' => $request->Entry,
+                    'Details' => $request->Details,
+                    'Amount' => $request->Amount,
+                    'BankName' => $request->BankName,
+                    'ChickNo' => $request->ChickNo,
+                    'Payee' => $request->Payee,
+                    'BankNotes' => $request->BankNotes,
+                    'Collecter' => $request->Collecter,
+                    'Approved' => $request->Approved,
+                    'Patient' => $request->Patient,
+                    'Company' => $request->Company,
+                    'edited' => $request->edited,
+                    'isRetrieved' => $request->isRetrieved,
+                    'VendorBillNo' => $request->VendorBillNo,
+                    'uploaded' => $request->uploaded,
+                    'UsrIns' => $request->UsrIns,
+                    'TimIns' => Carbon::now()
+                ]);
+
+                return response()->json(['state' => 'success', 'message' => 'Data Inserted Successfully']);
+            }
+
+
+
+        } catch (QueryException $ex) {
+            return response()->json(['state' => 'failed', 'message' => $ex->getMessage()]);
+        }
+
+
+    }
+
+
 }

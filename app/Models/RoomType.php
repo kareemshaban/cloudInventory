@@ -11,6 +11,7 @@ class RoomType extends Model
     protected $primaryKey = 'RoomTypeID';
     protected $table = 'roomtype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'RoomTypeID',
         'Code',

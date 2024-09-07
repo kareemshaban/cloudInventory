@@ -12,6 +12,7 @@ class LtAttachmentType extends Model
     protected $primaryKey = 'AttachmentTypeID';
     protected $table = 'ltattachmenttype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'AttachmentTypeID',
         'AttachmentTypeCode_Ar',

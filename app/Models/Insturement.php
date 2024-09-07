@@ -12,6 +12,7 @@ class Insturement extends Model
     protected $primaryKey = 'InsturementID';
     protected $table = 'insturement';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'InsturementID',
         'NameAr',

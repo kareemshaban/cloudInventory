@@ -12,6 +12,7 @@ class Check extends Model
     protected $primaryKey = 'ChechID';
     protected $table = 'check';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'ChechID',

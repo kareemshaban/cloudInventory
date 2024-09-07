@@ -12,6 +12,7 @@ class RestSalesCalculation extends Model
     protected $primaryKey = 'RestSalescalculationID';
     protected $table = 'restsalescalculation';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'RestSalescalculationID',
         'NameAR',

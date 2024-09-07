@@ -12,6 +12,7 @@ class Hall extends Model
     protected $primaryKey = 'HallID';
     protected $table = 'hall';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'HallID',
         'HallCode_Ar',

@@ -12,6 +12,7 @@ class OfferBonus extends Model
     protected $primaryKey = 'OfferBonusID';
     protected $table = 'offerbonus';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'OfferBonusID',
         'OfferID',

@@ -12,6 +12,7 @@ class ContractLowerLimitBillSumClass extends Model
     protected $primaryKey = 'ContractLowerLimitBillSumClassID';
     protected $table = 'contractlowerlimitbillsumclass';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'ContractLowerLimitBillSumClassID',

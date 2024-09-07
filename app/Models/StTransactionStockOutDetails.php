@@ -11,6 +11,7 @@ class StTransactionStockOutDetails extends Model
     protected $primaryKey = 'ID';
     protected $table = 'sttransactionstockoutdetails';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ID',
         'TransactionID',

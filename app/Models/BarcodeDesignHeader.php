@@ -12,6 +12,7 @@ class BarcodeDesignHeader extends Model
     protected $primaryKey = 'BarCodeDesignHeader_id';
     protected $table = 'barcodedesignheader';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'BarCodeDesignHeader_id',

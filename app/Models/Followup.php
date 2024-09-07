@@ -12,6 +12,7 @@ class Followup extends Model
     protected $primaryKey = 'FollowUpID';
     protected $table = 'followup';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'FollowUpID',
         'PatientID',

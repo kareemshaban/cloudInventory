@@ -12,6 +12,7 @@ class HamachiTrsLog extends Model
     protected $primaryKey = 'id';
     protected $table = 'hamachi_trs_log';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'id',
         'branch_id',

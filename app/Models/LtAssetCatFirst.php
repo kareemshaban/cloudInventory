@@ -12,6 +12,7 @@ class LtAssetCatFirst extends Model
     protected $primaryKey = 'LtAssetCatFirstID';
     protected $table = 'ltassetcatfirst';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'LtAssetCatFirstID',
         'NameAr',

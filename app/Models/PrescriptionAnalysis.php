@@ -11,6 +11,7 @@ class PrescriptionAnalysis extends Model
     protected $primaryKey = 'PrescriptionAnalysisID';
     protected $table = 'prescriptionanalysis';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PrescriptionAnalysisID',
         'AnalysisID',

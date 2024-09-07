@@ -12,6 +12,7 @@ class OfferItem extends Model
     protected $primaryKey = 'OfferItemID';
     protected $table = 'offeritem';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'OfferItemID',
         'OfferID',

@@ -11,6 +11,7 @@ class InventoryDoc extends Model
     protected $primaryKey = 'InventoryDocID';
     protected $table = 'inventorydoc';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'InventoryDocID',
         'StockID',

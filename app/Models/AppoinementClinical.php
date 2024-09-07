@@ -11,6 +11,7 @@ class AppoinementClinical extends Model
     protected $primaryKey = 'AppointmentID';
     protected $table = 'appoinementclinical';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'AppointmentID',

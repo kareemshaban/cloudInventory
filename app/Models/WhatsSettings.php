@@ -11,6 +11,7 @@ class WhatsSettings extends Model
     protected $primaryKey = 'id';
     protected $table = 'whatssettings';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'id',
         'send_client_pdf',

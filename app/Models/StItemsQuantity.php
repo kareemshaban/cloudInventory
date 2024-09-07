@@ -11,6 +11,7 @@ class StItemsQuantity extends Model
     protected $primaryKey = 'STItemsQuantityID';
     protected $table = 'stitemsquantity';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'STItemsQuantityID',
         'LTStockID',

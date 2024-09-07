@@ -11,6 +11,7 @@ class Serial extends Model
     protected $primaryKey = 'SerialID';
     protected $table = 'serial';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SerialID',
         'SerialNO',

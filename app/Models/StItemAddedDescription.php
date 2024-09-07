@@ -12,6 +12,7 @@ class StItemAddedDescription extends Model
     protected $primaryKey = 'ID';
     protected $table = 'stitemaddeddescriptions';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ID',
         'ItemID',

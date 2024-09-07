@@ -12,6 +12,7 @@ class floor extends Model
     protected $primaryKey = 'FloorID';
     protected $table = 'floor';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'FloorID',
         'NameAr',

@@ -12,6 +12,7 @@ class FavouritList extends Model
     protected $primaryKey = 'FavId';
     protected $table = 'favoritelist';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'FavId',
         'loginId',

@@ -11,6 +11,7 @@ class Payments extends Model
     protected $primaryKey = 'PaymentsID';
     protected $table = 'payments';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PaymentsID',
         'PaymentsDate',

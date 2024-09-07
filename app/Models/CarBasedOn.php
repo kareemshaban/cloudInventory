@@ -12,6 +12,7 @@ class CarBasedOn extends Model
     protected $primaryKey = 'CarBasedOnID';
     protected $table = 'carbasedon';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'CarBasedOnID',

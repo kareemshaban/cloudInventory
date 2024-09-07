@@ -12,6 +12,7 @@ class Installment extends Model
     protected $primaryKey = 'InstallmentID';
     protected $table = 'installment';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'InstallmentID',
         'VendorID',

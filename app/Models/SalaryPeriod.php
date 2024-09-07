@@ -11,6 +11,7 @@ class SalaryPeriod extends Model
     protected $primaryKey = 'SalaryPeriodID';
     protected $table = 'salaryperiod';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SalaryPeriodID',
         'Code',

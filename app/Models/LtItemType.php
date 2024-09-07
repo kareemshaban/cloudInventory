@@ -11,6 +11,7 @@ class LtItemType extends Model
     protected $primaryKey = 'ItemTypeID';
     protected $table = 'ltitemtype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ItemTypeID',
         'ItemTypeCode_Ar',

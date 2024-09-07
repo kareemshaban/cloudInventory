@@ -65,6 +65,20 @@ class VendorController extends Controller
         //
     }
 
+
+    public function download()
+    {
+        try {
+            $vendors = Vendor::all();
+            return response()->json(['state' => 'success', 'vendors' => $vendors]);
+
+
+        } catch (QueryException $ex) {
+            return response()->json(['state' => 'failed', 'message' => $ex->getMessage()]);
+
+        }
+    }
+
     public function upload(Request $request)
     {
 
@@ -81,6 +95,7 @@ class VendorController extends Controller
                     'AgeMonth' => $request->AgeMonth,
                     'AgeYear' => $request->AgeYear,
                     'SocialStatus' => $request->SocialStatus,
+                    'Education' => $request -> Education ,
                     'job' => $request->job,
                     'WorkHours' => $request->WorkHours,
                     'Weekend' => $request->Weekend,
@@ -169,6 +184,7 @@ class VendorController extends Controller
                     'AgeMonth' => $request->AgeMonth,
                     'AgeYear' => $request->AgeYear,
                     'SocialStatus' => $request->SocialStatus,
+                    'Education' => $request -> Education ,
                     'job' => $request->job,
                     'WorkHours' => $request->WorkHours,
                     'Weekend' => $request->Weekend,

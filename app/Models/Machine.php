@@ -12,6 +12,7 @@ class Machine extends Model
     protected $primaryKey = 'MachineID';
     protected $table = 'machine';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'MachineID',
         'MachineMacAddress',

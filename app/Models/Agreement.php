@@ -11,6 +11,7 @@ class Agreement extends Model
     protected $primaryKey = 'AgreeID';
     protected $table = 'agreement';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'AgreeID',
         'AgreementName',

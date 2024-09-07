@@ -11,6 +11,7 @@ class LtDiagnosis extends Model
     protected $primaryKey = 'DiagnosisID';
     protected $table = 'ltdiagnosis';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'DiagnosisID',
         'DiagnosisName_Ar',

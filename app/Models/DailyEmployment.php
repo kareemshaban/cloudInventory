@@ -11,6 +11,7 @@ class DailyEmployment extends Model
     protected $primaryKey = 'DailyEmploymentID';
     protected $table = 'dailyemployment';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'DailyEmploymentID',

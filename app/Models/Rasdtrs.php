@@ -11,6 +11,7 @@ class Rasdtrs extends Model
     protected $primaryKey = 'id';
     protected $table = 'rasdtrs';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'id',
         'invoiceNo',

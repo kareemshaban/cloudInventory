@@ -11,6 +11,7 @@ class SalaryTaxGuid extends Model
     protected $primaryKey = 'SalaryTaxGuidID';
     protected $table = 'salarytaxguid';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SalaryTaxGuidID',
         'Code',

@@ -12,6 +12,7 @@ class CalculatingLeaveMethod extends Model
     protected $primaryKey = 'CalculatingLeaveMethodID';
     protected $table = 'calculatingleavemethod';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'CalculatingLeaveMethodID',

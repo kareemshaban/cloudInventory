@@ -11,6 +11,7 @@ class DocType extends Model
     protected $primaryKey = 'STDOCTypeID';
     protected $table = 'doctype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'STDOCTypeID',

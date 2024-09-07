@@ -12,6 +12,7 @@ class SocialStatus extends Model
     protected $primaryKey = 'SocialStatusID';
     protected $table = 'socialstatus';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SocialStatusID',
         'SocialStatusCode_Ar',

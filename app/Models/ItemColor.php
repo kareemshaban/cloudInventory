@@ -12,6 +12,7 @@ class ItemColor extends Model
     protected $primaryKey = 'ID';
     protected $table = 'itemcolor';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ID',
         'ItemID',

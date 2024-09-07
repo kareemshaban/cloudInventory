@@ -12,6 +12,7 @@ class Houses extends Model
     protected $primaryKey = 'HouseID';
     protected $table = 'houses';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'HouseID',
         'House',

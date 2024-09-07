@@ -12,6 +12,7 @@ class LtRestCategoryIcon extends Model
     protected $primaryKey = 'ID';
     protected $table = 'ltrestcategoryicon';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ID',
         'IconName',

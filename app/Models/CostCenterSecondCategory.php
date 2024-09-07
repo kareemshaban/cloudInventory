@@ -10,6 +10,7 @@ class CostCenterSecondCategory extends Model
     protected $primaryKey = 'CostcenterSecondCatogryID';
     protected $table = 'costcentersecondcatogry';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'CostcenterSecondCatogryID',

@@ -11,6 +11,7 @@ class Transports extends Model
     protected $primaryKey = 'TransportID';
     protected $table = 'transports';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'TransportID',
         'EmployerID',

@@ -12,6 +12,7 @@ class LtAnalysis extends Model
     protected $primaryKey = 'AnalysisID';
     protected $table = 'ltanalysis';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'AnalysisID',
         'AnalysisCode_Ar',

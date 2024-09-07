@@ -11,6 +11,7 @@ class EmpCatogryTwo extends Model
     protected $primaryKey = 'ID';
     protected $table = 'empcatogrytwo';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'ID',

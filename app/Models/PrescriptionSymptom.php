@@ -11,6 +11,7 @@ class PrescriptionSymptom extends Model
     protected $primaryKey = 'PrescriptionSymptomID';
     protected $table = 'prescriptionsymptom';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PrescriptionSymptomID ',
         'PrescriptionID',

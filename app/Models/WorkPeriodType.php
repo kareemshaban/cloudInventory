@@ -11,6 +11,7 @@ class WorkPeriodType extends Model
     protected $primaryKey = 'WorkPeriodTypeID';
     protected $table = 'workperiodtype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'WorkPeriodTypeID',
         'NameAr',

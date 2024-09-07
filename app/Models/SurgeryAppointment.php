@@ -12,6 +12,7 @@ class SurgeryAppointment extends Model
     protected $primaryKey = 'SurgeryAppointementID';
     protected $table = 'surgeryappointement';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SurgeryAppointementID',
         'SurgeryAppointementCode',

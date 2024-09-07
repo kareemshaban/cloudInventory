@@ -11,6 +11,7 @@ class Clinic extends Model
     protected $primaryKey = 'ClinicID';
     protected $table = 'clinic';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'ClinicID',

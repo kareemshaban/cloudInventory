@@ -12,6 +12,7 @@ class DocTypeAccount extends Model
     protected $primaryKey = ' DocTypeAccountID';
     protected $table = 'doctypeaccount';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'DocTypeAccountID',

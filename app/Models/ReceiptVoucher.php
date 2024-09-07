@@ -12,6 +12,7 @@ class ReceiptVoucher extends Model
     protected $primaryKey = 'ReceiptVoucherId';
     protected $table = 'receiptvoucher';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ReceiptVoucherId',
         'DocNo',

@@ -12,6 +12,7 @@ class ContractNotcoveredServiceClass extends Model
     protected $primaryKey = 'ContractNotCoveredServiceClassID';
     protected $table = 'contractnotcoveredservicesclass';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'ContractNotCoveredServiceID',

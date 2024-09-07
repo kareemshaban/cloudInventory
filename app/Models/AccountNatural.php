@@ -12,6 +12,7 @@ class AccountNatural extends Model
     protected $primaryKey = 'AccountNaturalId';
     protected $table = 'accountnatural';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'AccountNaturalId',

@@ -12,6 +12,7 @@ class Insurancecompany extends Model
     protected $primaryKey = 'InsuranceCompanyID';
     protected $table = 'insurancecompany';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'InsuranceCompanyID',
         'InsuranceCompanyCode_Ar',

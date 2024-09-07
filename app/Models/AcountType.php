@@ -11,6 +11,7 @@ class AcountType extends Model
     protected $primaryKey = 'AcountTypeID';
     protected $table = 'acounttype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'AcountTypeID',
         'AcountTypeNameAr',

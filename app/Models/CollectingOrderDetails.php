@@ -11,6 +11,7 @@ class CollectingOrderDetails extends Model
     protected $primaryKey = 'CollectingOrderDetailsID';
     protected $table = 'collectingorderdetails';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'CollectingOrderDetailsID',

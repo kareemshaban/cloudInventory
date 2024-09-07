@@ -12,6 +12,7 @@ class BedItem extends Model
     protected $primaryKey = 'BedItemID';
     protected $table = 'beditem';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'BedItemID',

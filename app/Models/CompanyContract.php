@@ -11,6 +11,7 @@ class CompanyContract extends Model
     protected $primaryKey = 'CompanyContractID';
     protected $table = 'companycontract';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'CompanyContractID',

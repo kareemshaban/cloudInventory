@@ -11,6 +11,7 @@ class Recomendation extends Model
     protected $primaryKey = 'RecomendationID';
     protected $table = 'recomendation';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'RecomendationID',
         'Code',

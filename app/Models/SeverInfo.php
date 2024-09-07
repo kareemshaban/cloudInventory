@@ -11,6 +11,7 @@ class SeverInfo extends Model
     protected $primaryKey = 'ServerInfoID';
     protected $table = 'serverinfo';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ServerInfoID',
         'Mac1',

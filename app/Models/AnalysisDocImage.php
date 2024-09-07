@@ -11,6 +11,7 @@ class AnalysisDocImage extends Model
     protected $primaryKey = 'AnalysisDocImageID';
     protected $table = 'analysisdocimage';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'AnalysisDocImageID',

@@ -11,6 +11,7 @@ class EmpCatogryThree extends Model
     protected $primaryKey = 'ID';
     protected $table = 'empcatogrythree';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'ID',

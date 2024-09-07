@@ -11,6 +11,7 @@ class AuthenticationUserGroup extends Model
     protected $primaryKey = 'AuthenticationID';
     protected $table = 'authenticationusergroup';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'AuthenticationID',

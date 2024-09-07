@@ -11,6 +11,7 @@ class Employer extends Model
     protected $primaryKey = 'EmployerID';
     protected $table = 'employer';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'EmployerID',
@@ -44,6 +45,7 @@ class Employer extends Model
         'homeNo',
         'FamilyAddresse',
         'AccommodationNo',
+        'AccommodationEdit',
         'AccommodationFinish',
         'passportNo',
         'passportEdit',

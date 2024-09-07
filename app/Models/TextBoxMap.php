@@ -11,6 +11,7 @@ class TextBoxMap extends Model
     protected $primaryKey = 'TextBoxMapID';
     protected $table = 'textboxmap';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'TextBoxMapID',
         'TextBoxName',

@@ -11,6 +11,7 @@ class Message extends Model
     protected $primaryKey = 'MessageID';
     protected $table = 'message';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'MessageID',
         'MessageDetails',

@@ -12,6 +12,7 @@ class LtCategoryType extends Model
     protected $primaryKey = 'ID';
     protected $table = 'ltcategorytype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ID',
         'CategoryTypeCode_Ar',

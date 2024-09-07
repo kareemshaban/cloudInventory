@@ -11,6 +11,7 @@ class VendorSecondCatogry extends Model
     protected $primaryKey = 'VendorCatogryID';
     protected $table = 'vendorsecondcatogry';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'VendorCatogryID',
         'Code',

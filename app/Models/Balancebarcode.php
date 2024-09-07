@@ -11,6 +11,7 @@ class balancebarcode extends Model
     protected $primaryKey = 'BalanceBarcodeID';
     protected $table = 'balancebarcode';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'BalanceBarcodeID',

@@ -11,6 +11,7 @@ class AnalysisDocDetails extends Model
     protected $primaryKey = 'AnalysisDocDetailsID';
     protected $table = 'analysisdocdetails';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'AnalysisDocDetailsID',
         'AnalysisDocID',

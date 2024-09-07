@@ -11,6 +11,7 @@ class EmployerImages extends Model
     protected $primaryKey = 'ID';
     protected $table = 'employerimages';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'ID',

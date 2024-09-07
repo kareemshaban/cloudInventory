@@ -11,6 +11,7 @@ class ServiceLeaveEntitlements extends Model
     protected $primaryKey = 'ServiceLeaveEntitlementsID';
     protected $table = 'serviceleaveentitlements';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ServiceLeaveEntitlementsID',
         'NameAr',

@@ -12,6 +12,7 @@ class PrescriptionReComendation extends Model
     protected $primaryKey = 'PrescriptionRecomendationID';
     protected $table = 'prescriptionrecomendation';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PrescriptionRecomendationID',
         'PrescriptionID',

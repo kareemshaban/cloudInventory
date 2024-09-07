@@ -11,6 +11,7 @@ class VendorXray extends Model
     protected $primaryKey = 'VendorX_RaysID';
     protected $table = 'vendorx_rays';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'VendorX_RaysID',
         'PrescriptionID',

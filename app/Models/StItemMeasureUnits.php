@@ -11,6 +11,7 @@ class StItemMeasureUnits extends Model
     protected $primaryKey = 'ID';
     protected $table = 'stitemmeasureunits';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ID',
         'ItemID',

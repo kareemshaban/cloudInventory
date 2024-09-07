@@ -65,6 +65,19 @@ class CompanyInformationController extends Controller
         //
     }
 
+    public function download()
+    {
+        try {
+            $companyInformation = CompanyInformation::all();
+            return response()->json(['state' => 'success', 'companyInformation' => $companyInformation]);
+
+
+        } catch (QueryException $ex) {
+            return response()->json(['state' => 'failed', 'message' => $ex->getMessage()]);
+
+        }
+    }
+
     public function upload(Request $request)
     {
 

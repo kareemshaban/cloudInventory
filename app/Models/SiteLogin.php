@@ -11,6 +11,7 @@ class SiteLogin extends Model
     protected $primaryKey = 'SiteLoginID';
     protected $table = 'sitelogin';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SiteLoginID',
         'UserName',

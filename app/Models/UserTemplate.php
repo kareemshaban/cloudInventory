@@ -11,6 +11,7 @@ class UserTemplate extends Model
     protected $primaryKey = 'UserTemplateID';
     protected $table = 'usertemplate';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'UserTemplateID',
         'LoginID',

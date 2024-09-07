@@ -11,6 +11,7 @@ class LtReligion extends Model
     protected $primaryKey = 'ReligionID';
     protected $table = 'ltreligion';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ReligionID',
         'ReligionCode_Ar',

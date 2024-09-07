@@ -11,6 +11,7 @@ class SalaryInsuranceGuid extends Model
     protected $primaryKey = 'SalaryInsuranceGuidID';
     protected $table = 'salaryinsuranceguid';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SalaryInsuranceGuidID',
         'Code',

@@ -11,6 +11,7 @@ class VendorImages extends Model
     protected $primaryKey = 'ID';
     protected $table = 'vendorimages';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'ID',
         'VendorID',

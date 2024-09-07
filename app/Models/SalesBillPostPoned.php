@@ -11,6 +11,7 @@ class SalesBillPostPoned extends Model
     protected $primaryKey = 'SalesBillId';
     protected $table = 'salesbillpospostponed';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'SalesBillId',
         'DocType',

@@ -12,6 +12,7 @@ class LtDepartment extends Model
     protected $primaryKey = 'DepartementID';
     protected $table = 'ltdepartement';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'DepartementID',
         'DepartementParent',

@@ -12,6 +12,7 @@ class CacheTableUpdate extends Model
     protected $primaryKey = 'TableName';
     protected $table = 'cachetableupdate';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'TableName',

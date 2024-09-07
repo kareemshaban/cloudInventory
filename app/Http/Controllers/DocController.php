@@ -65,6 +65,19 @@ class DocController extends Controller
         //
     }
 
+    public function download()
+    {
+        try {
+            $docs = Doc::all();
+            return response()->json(['state' => 'success', 'docs' => $docs]);
+
+
+        } catch (QueryException $ex) {
+            return response()->json(['state' => 'failed', 'message' => $ex->getMessage()]);
+
+        }
+    }
+
 
     public function upload(Request $request)
     {

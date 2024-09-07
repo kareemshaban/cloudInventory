@@ -11,6 +11,7 @@ class WeekDays extends Model
     protected $primaryKey = 'WeakDaysId';
     protected $table = 'weakdays';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'WeakDaysId ',
         'WeakNameAr',

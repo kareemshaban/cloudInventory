@@ -11,6 +11,7 @@ class TableWithMinusFields extends Model
     protected $primaryKey = 'FeildID';
     protected $table = 'tableswithminusfeilds';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'FeildID',
         'column_name',

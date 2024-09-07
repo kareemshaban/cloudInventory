@@ -11,6 +11,7 @@ class BedType extends Model
     protected $primaryKey = 'BedTypeID';
     protected $table = 'bedtype';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'BedTypeID',

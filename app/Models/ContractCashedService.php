@@ -11,6 +11,7 @@ class ContractCashedService extends Model
     protected $primaryKey = 'ContractCashedServiceID';
     protected $table = 'contractcashedservice';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
 
     protected $fillable = [
         'ContractCashedServiceID',

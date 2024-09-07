@@ -11,6 +11,7 @@ class UserGroupDetails extends Model
     protected $primaryKey = 'UserGroupDetailsID';
     protected $table = 'usergroupdetails';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'UserGroupDetailsID',
         'LoginID',

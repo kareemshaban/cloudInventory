@@ -11,6 +11,7 @@ class Vendor extends Model
     protected $primaryKey = 'VendorID';
     protected $table = 'vendor';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'VendorID',
         'VendorType',
@@ -22,6 +23,7 @@ class Vendor extends Model
         'AgeMonth',
         'AgeYear',
         'SocialStatus',
+        'Education',
         'job',
         'WorkHours',
         'Weekend',

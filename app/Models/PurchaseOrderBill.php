@@ -11,6 +11,7 @@ class PurchaseOrderBill extends Model
     protected $primaryKey = 'PurchaseOrderBillId';
     protected $table = 'purchaseorderbill';
     public $timestamps = false;
+    protected $hidden = ['TimUpd', 'TimIns', 'Dis'];
     protected $fillable = [
         'PurchaseOrderBillId',
         'DocType',
