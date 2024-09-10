@@ -61,9 +61,17 @@ class ExchangeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Exchange $exchange)
+    public function destroy($nodeKey)
     {
-        //
+        $objs = Exchange::where('nodeKey', '=', $nodeKey)->get();
+        if(count($objs)){
+            $obj = $objs[0];
+           
+            $obj ->delete();
+            return response()->json(['state' => 'success', 'message' => 'Deleted Successfully']);
+        } else {
+            return response()->json(['state' => 'falied', 'message' => 'Record can nit fount ']);
+        }
     }
 
     public function download()
@@ -80,6 +88,8 @@ class ExchangeController extends Controller
         }
     }
 
+
+    
     public function upload(Request $request)
     {
         try {

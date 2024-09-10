@@ -65,10 +65,38 @@ class StItemsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(StItems $stItems)
+    public function destroy($id)
     {
-        //
+        $item = StItems::find($id) ;
+        if($item){
+
+            $measureUnits = StItemMeasureUnits::where('ItemID', '=', $item->ItemID)->get();
+            $prices = StItemPricePlanSystem::where('ItemID', '=', $item->ItemID)->get();
+            $patches = Patch::where('ItemID', '=', $item->ItemID)->get();
+            $collections = STITemCollections::where('MainItemID', '=', $item->ItemID)->get();
+            $stockQnts = StItemsQuantity::where('STItemsID', '=', $item->ItemID)->get();
+            foreach( $measureUnits as  $measureUnit){
+                $measureUnit ->delete();
+            }
+            foreach( $prices as  $price){
+                $price ->delete();
+            }
+              foreach( $patches as  $patche){
+                $patche ->delete();
+            }
+            foreach( $collections as  $collection){
+                $collection ->delete();
+            }
+            foreach( $stockQnts as  $stockQnt){
+                $stockQnt ->delete();
+            }
+            $item ->delete();
+            return response()->json(['state' => 'success', 'message' => 'Deleted Successfully']);
+        } else {
+            return response()->json(['state' => 'falied', 'message' => 'Record can nit fount ']);
+        }
     }
+
 
     public function download()
     {

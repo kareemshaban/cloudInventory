@@ -61,9 +61,20 @@ class StTransactionStockOutController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(StTransactionStockOut $stTransactionStockOut)
+    public function destroy($nodeKey)
     {
-        //
+        $objs = StTransactionStockOut::where('node', '=', $nodeKey)->get();
+        if(count($objs)){
+            $obj = $objs[0];
+            $salesBillDetails = StTransactionStockOutDetails::where('TransactionID', '=', $obj->TransactionID)->get();
+            foreach( $salesBillDetails as  $salesBillDetail){
+                $salesBillDetail ->delete();
+            }
+            $obj ->delete();
+            return response()->json(['state' => 'success', 'message' => 'Deleted Successfully']);
+        } else {
+            return response()->json(['state' => 'falied', 'message' => 'Record can nit fount ']);
+        }
     }
 
 
@@ -107,7 +118,6 @@ class StTransactionStockOutController extends Controller
                     'approved' => $request->approved,
                     'node' => $request->node,
                     'uploaded' => $request->uploaded,
-                    'Dis' => $request->Dis,
                     'UsrUpd' => $request->UsrIns,
                     'TimIns' => Carbon::now(),
                 ]);

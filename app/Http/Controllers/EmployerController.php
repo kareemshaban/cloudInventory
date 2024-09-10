@@ -60,10 +60,17 @@ class EmployerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Employer $employer)
+    public function destroy($id)
     {
-        //
+        $Employer = Employer::find($id);
+        if($Employer){
+            $Employer ->delete();
+            return response()->json(['state' => 'success', 'message' => 'Deleted Successfully']);
+        } else {
+            return response()->json(['state' => 'falied', 'message' => 'Record can nit fount ']);
+        }
     }
+
 
     public function download()
     {

@@ -62,9 +62,20 @@ class SalesBillController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(SalesBill $salesBill)
+    public function destroy($nodeKey)
     {
-        //
+        $SalesBills = SalesBill::where('nodeKey', '= ', $nodeKey)->get();
+        if(count($SalesBills)){
+            $SalesBill = $SalesBills[0];
+            $salesBillDetails = SalesBillDetails::where('SalesBillId', '=', $SalesBill->SalesBillId)->get();
+            foreach( $salesBillDetails as  $salesBillDetail){
+                $salesBillDetail ->delete();
+            }
+            $SalesBill ->delete();
+            return response()->json(['state' => 'success', 'message' => 'Deleted Successfully']);
+        } else {
+            return response()->json(['state' => 'falied', 'message' => 'Record can nit fount ']);
+        }
     }
 
     public function download()
@@ -154,6 +165,7 @@ class SalesBillController extends Controller
                 'ItemId' => $request->salesBillDetails[$i]['ItemId'],
                 'SalesBillId' => $id,
                 'StoreId' => $request->salesBillDetails[$i]['StoreId'],
+                'ItemUnit' => $request -> salesBillDetails[$i]['ItemUnit'],
                 'ItemQuantity' => $request->salesBillDetails[$i]['ItemQuantity'],
                 'ItemPrice' => $request->salesBillDetails[$i]['ItemPrice'],
                 'ItemPercentageDiscount' => $request->salesBillDetails[$i]['ItemPercentageDiscount'],

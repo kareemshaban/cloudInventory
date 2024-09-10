@@ -61,11 +61,22 @@ class PurchaseBillController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(PurchaseBill $purchaseBill)
-    {
-        //
-    }
 
+     public function destroy($nodeKey)
+     {
+        $objs = PurchaseBill::where('nodeKey', '=', $nodeKey)->get();
+         if(count($objs)){
+             $obj = $objs[0];
+             $billDetails = PurchaseBillDetails::where('PurchaseBillId', '=', $obj->PurchaseBillId)->get();
+             foreach( $billDetails as  $billDetail){
+                 $billDetail ->delete();
+             }
+             $obj ->delete();
+             return response()->json(['state' => 'success', 'message' => 'Deleted Successfully']);
+         } else {
+             return response()->json(['state' => 'falied', 'message' => 'Record can nit fount ']);
+         }
+     }
     public function download()
     {
         try {

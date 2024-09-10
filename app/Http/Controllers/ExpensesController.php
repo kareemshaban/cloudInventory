@@ -60,9 +60,17 @@ class ExpensesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Expenses $expenses)
+    public function destroy($nodeKey)
     {
-        //
+        $objs = Expenses::where('nodeKey', '=', $nodeKey)->get();
+        if(count($objs)){
+            $obj = $objs[0];
+           
+            $obj ->delete();
+            return response()->json(['state' => 'success', 'message' => 'Deleted Successfully']);
+        } else {
+            return response()->json(['state' => 'falied', 'message' => 'Record can nit fount ']);
+        }
     }
 
     public function download()

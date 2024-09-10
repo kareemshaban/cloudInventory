@@ -61,9 +61,20 @@ class StTransactionStockTransferController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(StTransactionStockTransfer $stTransactionStockTransfer)
+    public function destroy($nodeKey)
     {
-        //
+        $objs = StTransactionStockTransfer::where('nodeKey', '=', $nodeKey)->get();
+        if(count($objs)){
+            $obj = $objs[0];
+            $salesBillDetails = StTransactionStockTransferDetails::where('TransactionID', '=', $obj->TransactionTransferID)->get();
+            foreach( $salesBillDetails as  $salesBillDetail){
+                $salesBillDetail ->delete();
+            }
+            $obj ->delete();
+            return response()->json(['state' => 'success', 'message' => 'Deleted Successfully']);
+        } else {
+            return response()->json(['state' => 'falied', 'message' => 'Record can nit fount ']);
+        }
     }
 
 
@@ -166,7 +177,6 @@ class StTransactionStockTransferController extends Controller
                 'Quantity' => $request->salesBillDetails[$i]['Quantity'],
                 'Patch' => $request->salesBillDetails[$i]['Patch'],
                 'expiryDate' => $request->salesBillDetails[$i]['expiryDate'],
-                'ExpiryDate' => $request->salesBillDetails[$i]['ExpiryDate'],
                 'SN' => $request->salesBillDetails[$i]['SN'],
                 'UsrIns' => $request->salesBillDetails[$i]['UsrIns'],
                 'TimIns' => Carbon::now()

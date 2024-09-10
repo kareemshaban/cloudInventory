@@ -61,9 +61,21 @@ class DocTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(DocType $docType)
+    public function destroy( $STDOCTypeID)
     {
-        //
+        $docType = DocType::find($STDOCTypeID);
+        if($docType){
+            $docEffects = DocEffect::where('DocEffectTYPE', '=', $docType->STDOCTypeID)->get();
+            foreach( $docEffects  as  $docEffect){
+                $docEffect -> delete();
+            }
+            $docType -> delete();
+            return response()->json(['state' => 'success', 'message' => 'Deleted Successfully']);
+
+        
+        } else {
+            return response()->json(['state' => 'falied', 'message' => 'Record can nit fount ']);
+        }
     }
 
     public function download()

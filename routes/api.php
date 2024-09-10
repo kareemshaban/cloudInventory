@@ -30,6 +30,8 @@ Route::post('/sync-up/Exchange', [App\Http\Controllers\ExchangeController::class
 Route::post('/sync-up/Expenses', [App\Http\Controllers\ExpensesController::class, 'upload'])->name('sync-up/Expenses');
 Route::post('/sync-up/DailyEntry', [App\Http\Controllers\DailyEntryController::class, 'upload'])->name('sync-up/DailyEntry');
 Route::post('/sync-up/DailyEntryIntial', [App\Http\Controllers\DailyEntryIntialController::class, 'upload'])->name('sync-up/DailyEntryIntial');
+Route::post('/sync-up/DailyEntryIntial', [App\Http\Controllers\DailyEntryIntialController::class, 'upload'])->name('sync-up/DailyEntryIntial');
+Route::post('/sync-up/PurchaseReturnBill', [App\Http\Controllers\PurchaseReturnBillController::class, 'upload'])->name('sync-up/PurchaseReturnBill');
 
 
 //////////////////////////////////////////////////GET REQUESTS///////////////////////////////////////////////////////////////////////
@@ -43,7 +45,7 @@ Route::get('/sync-down/CatchRecipit', [App\Http\Controllers\CatchReceiptControll
 Route::get('/sync-down/salesBill', [App\Http\Controllers\SalesBillController::class, 'download'])->name('sync-down/salesBill');
 Route::get('/sync-down/stItems', [App\Http\Controllers\StItemsController::class, 'download'])->name('sync-down/stItems');
 Route::get('/sync-down/STTransactionStockIn ', [App\Http\Controllers\StTransactionStockInController::class, 'download'])->name('sync-down/STTransactionStockIn');
-Route::get('/sync-down/STTransactionStockOut ', [App\Http\Controllers\StTransactionStockInController::class, 'download'])->name('sync-down/STTransactionStockOut');
+Route::get('/sync-down/STTransactionStockOut ', [App\Http\Controllers\StTransactionStockOutController::class, 'download'])->name('sync-down/STTransactionStockOut');
 Route::get('/sync-down/STTransactionStockTransfer ', [App\Http\Controllers\StTransactionStockTransferController::class, 'download'])->name('sync-down/STTransactionStockTransfer');
 Route::get('/sync-down/SalesQuotationBill', [App\Http\Controllers\SalesQuotationBillController::class, 'download'])->name('sync-down/SalesQuotationBill');
 Route::get('/sync-down/SalesOrderBill', [App\Http\Controllers\SalesOrderBillController::class, 'download'])->name('sync-down/SalesOrderBill');
@@ -53,21 +55,32 @@ Route::get('/sync-down/Exchange', [App\Http\Controllers\ExchangeController::clas
 Route::get('/sync-down/Expenses', [App\Http\Controllers\ExpensesController::class, 'download'])->name('sync-down/Expenses');
 Route::get('/sync-down/DailyEntry', [App\Http\Controllers\DailyEntryController::class, 'download'])->name('sync-down/DailyEntry');
 Route::get('/sync-down/DailyEntryIntial', [App\Http\Controllers\DailyEntryIntialController::class, 'download'])->name('sync-down/DailyEntryIntial');
+Route::get('/sync-down/PurchaseReturnBill', [App\Http\Controllers\PurchaseReturnBillController::class, 'download'])->name('sync-down/PurchaseReturnBill');
+
+//////////////////////////////////////////////////Delete REQUESTS///////////////////////////////////////////////////////////////////////
+
+
+Route::get('/sync-delete/DocType/{id}', [App\Http\Controllers\DocTypeController::class, 'destroy'])->name('sync-delete-DocType');
+Route::get('/sync-delete/Doc/{id}', [App\Http\Controllers\DocController::class, 'destroy'])->name('sync-delete-Doc');
+Route::get('/sync-delete/Vendor/{id}', [App\Http\Controllers\VendorController::class, 'destroy'])->name('sync-delete-Vendor');
+Route::get('/sync-delete/CompanyInformation/{id}', [App\Http\Controllers\CompanyInformationController::class, 'destroy'])->name('sync-delete/CompanyInformation');
+Route::get('/sync-delete/Employer/{id}', [App\Http\Controllers\EmployerController::class, 'destroy'])->name('sync-delete/Employer');
+Route::get('/sync-delete/CatchRecipit/{nodeKey}', [App\Http\Controllers\CatchReceiptController::class, 'destroy'])->name('sync-delete/CatchRecipit');
+Route::get('/sync-delete/salesBill/{nodeKey}', [App\Http\Controllers\SalesBillController::class, 'destroy'])->name('sync-delete/salesBill');
+Route::get('/sync-delete/stItems/{id}', [App\Http\Controllers\StItemsController::class, 'destroy'])->name('sync-delete/stItems');
+Route::get('/sync-delete/STTransactionStockIn/{nodeKey}', [App\Http\Controllers\StTransactionStockInController::class, 'destroy'])->name('sync-delete/STTransactionStockIn');
+Route::get('/sync-delete/STTransactionStockOut/{nodeKey}', [App\Http\Controllers\StTransactionStockOutController::class, 'destroy'])->name('sync-delete/STTransactionStockOut');
+Route::get('/sync-delete/STTransactionStockTransfer/{nodeKey}', [App\Http\Controllers\StTransactionStockTransferController::class, 'destroy'])->name('sync-delete/STTransactionStockTransfer');
+Route::get('/sync-delete/SalesQuotationBill/{nodeKey}', [App\Http\Controllers\SalesQuotationBillController::class, 'destroy'])->name('sync-delete/SalesQuotationBill');
+Route::get('/sync-delete/SalesOrderBill/{nodeKey}', [App\Http\Controllers\SalesOrderBillController::class, 'destroy'])->name('sync-delete/SalesOrderBill');
+Route::get('/sync-delete/SalesReturnBill/{nodeKey}', [App\Http\Controllers\SalesReturnBillController::class, 'destroy'])->name('sync-delete/SalesReturnBill');
+Route::get('/sync-delete/PurchaseBill/{nodeKey}', [App\Http\Controllers\PurchaseBillController::class, 'destroy'])->name('sync-delete/PurchaseBill');
+Route::get('/sync-delete/Exchange/{nodeKey}', [App\Http\Controllers\ExchangeController::class, 'destroy'])->name('sync-delete/Exchange');
+Route::get('/sync-delete/Expenses/{nodeKey}', [App\Http\Controllers\ExpensesController::class, 'destroy'])->name('sync-delete/Expenses');
+Route::get('/sync-delete/DailyEntry/{nodeKey}', [App\Http\Controllers\DailyEntryController::class, 'destroy'])->name('sync-delete/DailyEntry');
+Route::get('/sync-delete/DailyEntryIntial/{nodeKey}', [App\Http\Controllers\DailyEntryIntialController::class, 'destroy'])->name('sync-delete/DailyEntryIntial');
+Route::get('/sync-delete/PurchaseReturnBill/{id}', [App\Http\Controllers\PurchaseReturnBillController::class, 'destroy'])->name('sync-delete/PurchaseReturnBill');
 
 
 
-// STTransactionStockIn - Details name in main object( salesBillDetails)   done
-// STTransactionStockOut - Details name in main object( salesBillDetails) done
-// STTransactionStockTransfer - Details name in main object( salesBillDetails) done
-// -------------------------------------------------
-// SalesQuotationBill - Details name in main object( orderDetails) done
-// SalesOrderBill - Details name in main object( orderDetails) done
-// SalesReturnBill - Details name in main object( salesReturnBillDetails) done
-// ---------------------------------------------------
-// PurchaseBill - Details name in main object (billDetails) done
-// ----------------------------------------------------
-// Exchange   done
-// Expenses done
-// ----------------------------------------------------
-// DailyEntry - Details name in main object (details)   done
-// DailyEntryIntial - Details name in main object(details done
+

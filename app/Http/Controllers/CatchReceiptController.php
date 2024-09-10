@@ -60,9 +60,16 @@ class CatchReceiptController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CatchReceipt $catchReceipt)
+    public function destroy($nodeKey)
     {
-        //
+        $catchRecipits = CatchReceipt::where('node', '= ', $nodeKey)->get();
+        if(count($catchRecipits)){
+            $catchRecipit = $catchRecipits[0];
+            $catchRecipit ->delete();
+            return response()->json(['state' => 'success', 'message' => 'Deleted Successfully']);
+        } else {
+            return response()->json(['state' => 'falied', 'message' => 'Record can nit fount ']);
+        }
     }
 
 

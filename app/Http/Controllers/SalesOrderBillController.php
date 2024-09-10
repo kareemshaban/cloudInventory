@@ -61,9 +61,20 @@ class SalesOrderBillController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(SalesOrderBill $salesOrderBill)
+    public function destroy($nodeKey)
     {
-        //
+        $objs = SalesOrderBill::where('nodeKey', '=', $nodeKey)->get();
+        if(count($objs)){
+            $obj = $objs[0];
+            $orderDetails = SalesOrderBillDetails::where('SalesOrderBillId', '=', $obj->SalesOrderBillId)->get();
+            foreach( $orderDetails as  $orderDetail){
+                $orderDetail ->delete();
+            }
+            $obj ->delete();
+            return response()->json(['state' => 'success', 'message' => 'Deleted Successfully']);
+        } else {
+            return response()->json(['state' => 'falied', 'message' => 'Record can nit fount ']);
+        }
     }
 
     public function download()

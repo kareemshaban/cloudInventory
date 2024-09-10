@@ -60,9 +60,15 @@ class DocController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Doc $doc)
+    public function destroy($id)
     {
-        //
+        $doc = Doc::find($id);
+        if($doc){
+            $doc ->delete();
+            return response()->json(['state' => 'success', 'message' => 'Deleted Successfully']);
+        } else {
+            return response()->json(['state' => 'falied', 'message' => 'Record can nit fount ']);
+        }
     }
 
     public function download()

@@ -61,9 +61,20 @@ class DailyEntryIntialController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(DailyEntryIntial $dailyEntryIntial)
+    public function destroy($nodeKey)
     {
-        //
+        $objs = DailyEntryIntial::where('nodeKey', '=', $nodeKey)->get();
+        if(count($objs)){
+            $obj = $objs[0];
+            $details = DailyEntryIntialDetails::where('DailyEntryIntialID', '=', $obj->DailyEntryIntialID)->get();
+            foreach( $details as  $detail){
+                $detail ->delete();
+            }
+            $obj ->delete();
+            return response()->json(['state' => 'success', 'message' => 'Deleted Successfully']);
+        } else {
+            return response()->json(['state' => 'falied', 'message' => 'Record can nit fount ']);
+        }
     }
 
     public function download()
